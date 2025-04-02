@@ -13,7 +13,7 @@ const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
 
-  const testGetBooks = async () => {
+  const fetchAllBooks = async () => {
     setIsLoading(true);
     try {
       const result = await getBooks();
@@ -30,7 +30,7 @@ const Page = () => {
     try {
       const result = await addBook(bookData);
       if (result) {
-        await testGetBooks();
+        await fetchAllBooks();
         setIsModalOpen(false);
       }
     } finally {
@@ -44,7 +44,7 @@ const Page = () => {
         <div className="flex gap-4 mb-8">
           <Button
             name="Get Books"
-            onClick={testGetBooks}
+            onClick={fetchAllBooks}
             icon={FaBook}
             disabled={isLoading}
             loading={isLoading}
@@ -87,8 +87,3 @@ const Page = () => {
 };
 
 export default Page;
-
-
-
-
-

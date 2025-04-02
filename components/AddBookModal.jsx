@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import { FaSave, FaTimes } from 'react-icons/fa';
 
-const AddBookModal = ({ isOpen, onClose, onSubmit, isLoading }) => {
-  const initialBookData = {
-    title: '',
-    author: '',
-    description: '',
-    published_date: ''
-  };
+const initialBookData = {
+  title: '',
+  author: '',
+  description: '',
+  published_date: ''
+};
 
+const AddBookModal = ({ isOpen, onClose, onSubmit, isLoading }) => {
   const [bookData, setBookData] = useState(initialBookData);
 
   useEffect(() => {
@@ -111,4 +111,3 @@ const AddBookModal = ({ isOpen, onClose, onSubmit, isLoading }) => {
 };
 
 export default AddBookModal;
-
