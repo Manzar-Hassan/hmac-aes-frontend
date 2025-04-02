@@ -61,11 +61,17 @@ const Page = () => {
           <div className="flex justify-center items-center min-h-[200px]">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
           </div>
-        ) : (
+        ) : books.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {books.map((book) => (
               <BookCard key={book.id} book={book} />
             ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center min-h-[200px] bg-white rounded-lg shadow-sm border border-gray-200">
+            <FaBook className="text-gray-400 text-4xl mb-3" />
+            <p className="text-gray-500 text-lg">No books to show</p>
+            <p className="text-gray-400 text-sm mt-1">Click "Get Books" to fetch the book list</p>
           </div>
         )}
 
@@ -81,6 +87,7 @@ const Page = () => {
 };
 
 export default Page;
+
 
 
 
