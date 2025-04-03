@@ -92,7 +92,7 @@ const BookCard = ({ book }) => {
             {book.title}
           </h2>
           <div className="flex items-center gap-2">
-            <span className="text-xs px-3 py-1.5 bg-gray-100 rounded-xl text-gray-600 font-mono border-r border-gray-200">
+            <span className="text-xs px-3 py-1.5 bg-gray-100 rounded-2xl text-gray-600 font-mono border-r border-gray-200">
               {shortId}
             </span>
             <div className="relative">
@@ -127,9 +127,9 @@ const BookCard = ({ book }) => {
           <span className="text-sm">{formatDate(book.published_date)}</span>
         </div>
 
-        <p className="text-gray-600 mb-5 line-clamp-3 text-sm leading-relaxed">
+        <div className="text-gray-600 mb-5 line-clamp-3 text-sm leading-relaxed">
           {book.description}
-        </p>
+        </div>
 
         <div className="flex justify-between items-center text-xs text-gray-400 pt-3 border-t border-gray-100">
           <span>Created: {formatDate(book.created_at)}</span>
