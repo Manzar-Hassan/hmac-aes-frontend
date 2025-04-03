@@ -71,7 +71,9 @@ const Page = () => {
           <div className="flex flex-col items-center justify-center min-h-[200px] bg-white rounded-lg shadow-sm border border-gray-200">
             <FaBook className="text-gray-400 text-4xl mb-3" />
             <p className="text-gray-500 text-lg">No books to show</p>
-            <p className="text-gray-400 text-sm mt-1">Click "Get Books" to fetch the book list</p>
+            <p className="text-gray-400 text-sm mt-1">
+              Click "Get Books" to fetch the book list
+            </p>
           </div>
         )}
 
