@@ -22,26 +22,26 @@ const getBooks = async () => {
   }
 };
 
-export async function addBook(bookData) {
-    const encryptedData = encryptAES(bookData);
-    const hmacSignature = generateHMAC(encryptedData);
+async function addBook(bookData) {
+  const encryptedData = encryptAES(bookData);
+  const hmacSignature = generateHMAC(encryptedData);
 
-    const payload = {
-      data: encryptedData,
-      hmac: hmacSignature,
-    };
+  const payload = {
+    data: encryptedData,
+    hmac: hmacSignature,
+  };
 
-    try {
-      const response = await axios.post(`${API_BASE_URL}/books`, payload, {
-        headers: { "Content-Type": "application/json" },
-      });
+  try {
+    const response = await axios.post(`${API_BASE_URL}/books`, payload, {
+      headers: { "Content-Type": "application/json" },
+    });
 
-      console.log("POST Response:", response.data);
-      return response.data;
-    } catch (error) {
-      console.error("POST Error:", error.response?.data || error.message);
-      return null;
-    }
+    console.log("POST Response:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error("POST Error:", error.response?.data || error.message);
+    return null;
   }
+}
 
 export { getBooks, addBook };
